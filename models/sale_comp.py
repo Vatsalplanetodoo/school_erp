@@ -22,15 +22,9 @@ class SaleComp(models.Model):
 
     @api.onchange('discount')
     def discount(self):
-        # a = self.amount_untaxed * 10/100
-        # b = self.amount_untaxed * 5/100
         if self.discount == 5:
-            # self.amount_total = self.amount_untaxed - a + self.amount_tax
             self.tot_discount1 = self.discount
         elif self.discount == 10:
-            # self.amount_total = self.amount_untaxed - b + self.amount_tax
             self.tot_discount1 = self.discount
-        # else:
-        #     self.tax_discount = 0
         return 0
 
